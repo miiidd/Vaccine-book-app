@@ -1,0 +1,37 @@
+.card{
+    width: 250px;
+    height: fit-content;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
+.cardtext {
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:5px;
+}
+.cardtext h1{
+    font-family: 'itim';
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    background-color: rgb(225, 255, 2);
+}
+.cardtext h2{
+    font-family: 'Inter';
+    color:rgb(0, 0, 0);
+    font-weight: 400;
+    font-size: 15px;
+}
+.cardtext h3{
+    font-family: 'Inter';
+    color:rgb(129, 129, 129);
+    font-weight: 400;
+    font-size: 13px;
+    text-align: right;
+}

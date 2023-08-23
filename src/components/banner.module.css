@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Itim');
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+.banner {
+    display: block;
+    width: 100vw;
+    height: 80vh;
+    position:relative;
+}
+
+.bannerText{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    text-align: center;
+    text-shadow: 2px 3px 4px rgba(0,0,0,0.5);
+    top: 35px;
+    z-index:20;
+}
+.bannerText h1 {
+    font-family: 'itim';
+    color:rgb(225, 255, 2);
+    font-weight: bold;
+    font-size: 60px;
+}
+.bannerText h2 {
+    font-family: 'itim';
+    color:rgb(196, 175, 255);
+    font-weight: bold;
+    font-size: 40px;
+}
+.bannerText h6 {
+    font-family: 'Inter';
+    color:rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 15px;
+}
