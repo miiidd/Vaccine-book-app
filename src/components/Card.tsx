@@ -1,12 +1,14 @@
 import styles from './card.module.css'
+import Image from 'next/image'
 
-export default function Card() {
+export default function Card( {hospitalName, imgSrc} : {hospitalName:string, imgSrc:string}) {
     return (
-        <div className={styles.card}>
-            <div className={styles.cardtext}>
-                <h1>What is Vaccine?</h1>
-                <h2>Vaccination is a simple, safe, and effective way of protecting you against harmful diseases, before you come into contact with them. It uses your body’s natural defenses to build resistance to specific infections and makes your immune system stronger.</h2>
-                <h3>See more detail...</h3>
+        <div className='w-1/5 h-[300px] rounded-lg shadow-lg'>
+            <div className='w-full h-[83%] relative rounded-t-lg '>
+                <Image src={imgSrc} alt='Hospital Picture' fill={true} className='object-cover rounded-t-lg'/>
+            </div>
+        <div className='w-full h-[20%] p-[10px] bg-amber-200 font-normal'>
+                {hospitalName}
             </div>
         </div>
     )
