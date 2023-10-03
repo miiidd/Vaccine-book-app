@@ -1,9 +1,7 @@
 'use client'
-import Image from 'next/image'
-import Banner from '@/components/Banner'
 import Card from '@/components/Card'
 import { useReducer } from 'react';
-import {useState} from 'react';
+import Link from "next/link";
 
 export default function CardPanel() {
 
@@ -26,12 +24,25 @@ export default function CardPanel() {
         ['Thammasat University Hospital', 0]
       ]));
 
+/**
+ * Mock Data
+ */
+const mockHospitalRepo = [
+    {hid:'001', name:'Chulalongkorn Hospital', image:'/img/chula.jpg'},
+    {hid:'002', name:'Rajavithi Hospital', image:'/img/rajavithi.jpg'},
+    {hid:'003', name:'Thammasat University Hospital', image:'/img/thammasat.jpg'}
+]
+
     return (
         <div>
             <div style={{margin:"20px", display:"flex", flexDirection:"row", flexWrap:"wrap", justifyContent:"space-around", alignContent:"space-around" }}>
-                <Card rating={ratingMap.get('Chulalongkorn Hospital') || 0 }  hospitalName='Chulalongkorn Hospital' imgSrc='/img/chula.jpg' onRating={(rating:number)=>dispatchrating({type:'update',hospitalName:'Chulalongkorn Hospital',newRating:rating})}/>
-                <Card rating={ratingMap.get('Rajavithi Hospital') || 0} hospitalName='Rajavithi Hospital' imgSrc='/img/rajavithi.jpg'onRating={(rating:number)=>dispatchrating({type:'update',hospitalName:'Rajavithi Hospital',newRating:rating})}/>
-                <Card rating={ratingMap.get('Thammasat University Hospital') || 0} hospitalName='Thammasat University Hospital' imgSrc='/img/thammasat.jpg' onRating={(rating:number)=>dispatchrating({type:'update',hospitalName:'Thammasat University Hospital',newRating:rating})}/>
+                {
+                mockHospitalRepo.map((hospitalItem) => (
+                    <Link href={`/hospital/${hospitalItem.hid}`} className="w-1/5">
+                    <Card hospitalName={hospitalItem.name} imgSrc={hospitalItem.image} rating={ratingMap.get(hospitalItem.name) || 0 } onRating={(rating:number)=>dispatchrating({type:'update',hospitalName:hospitalItem.name,newRating:rating})}/>
+                    </Link>
+                ))    
+                }
             </div>
             { Array.from(ratingMap).map( (element)=><div key={element[0]} onClick={()=>dispatchrating({type:'remove',hospitalName:element[0],newRating:element[1]})}>{element[0]} Rating = {element[1]}</div> )}
         </div>

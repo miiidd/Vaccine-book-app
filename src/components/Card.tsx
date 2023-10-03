@@ -14,9 +14,9 @@ export default function Card( {hospitalName, imgSrc,rating,onRating} : {hospital
             </div>
             <Rating className='w-full h-[10%] py-2 pl-2' name="controlled"
             value={rating}
-            onChange={(event, newValue) => {event.stopPropagation;
+            onChange={(event, newValue) => {event.stopPropagation(); event.preventDefault();
             onRating(newValue);
-            }}/>
+            }} onClick={(e) => {e.stopPropagation()}}/>
         </InteractiveCard>
     )
 }
