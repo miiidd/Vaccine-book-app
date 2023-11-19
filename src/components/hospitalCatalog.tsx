@@ -9,7 +9,9 @@ export default async function HospitalCatalog({hospitalJson}:{hospitalJson:Objec
                 {
                 hospitalJsonReady.data.map((hospitalItem:Object) => (
                     <Link href={`/hospital/${hospitalItem.id}`} className="w-1/5">
+
                     <Card hospitalName={hospitalItem.name} imgSrc={hospitalItem.picture} />
+                    
                     </Link>
                 ))    
                 }

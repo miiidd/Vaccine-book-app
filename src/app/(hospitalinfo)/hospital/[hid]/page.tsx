@@ -17,7 +17,7 @@ export default async function HospitalDetailPage({params} : {params : {hid:strin
     return(
         <main className="text-center p-5">
             <div className="flex flex-row my-5">
-                <Image src={ hospitalDetail.data.picture} alt="Hospital Image" width={0} height={0} sizes="100vw" className="rounded-lg w-[30%]"/>
+                <Image src={ hospitalDetail.data.picture} alt="hospital image" width={0} height={0} sizes="100vw" className="rounded-lg w-[30%]"/>
                 <div className="text-md mx-5 font-bold text-left">
                 {hospitalDetail.data.name}
                 <div className="text-md mx-5 font-normal">Address: {hospitalDetail.data.address}</div>
